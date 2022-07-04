@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
@@ -42,11 +43,14 @@ public class SearchService {
     );
 
     @GetMapping("restaurantSearch")
-    public List<RestaurantData> restaurantSearch(String searchString) throws SQLException {
-        LOGGER.debug("Entering restaurant search", searchString);
+    public List<RestaurantData> restaurantSearch(@RequestParam("searchString") String searchString) throws SQLException {
+        LOGGER.debug("Entering restaurant search " + searchString);
         Connection con = this.dataSource.getConnection();
+        String searchParam = "%" + searchString + "%";
         PreparedStatement stmt = con.prepareStatement(
-                "select name, description, pic_url, rating from restaurant_info");
+                "select name, description, pic_url, rating from restaurant_info" +
+                        " where lower(name) like ?");
+        stmt.setString(1, searchParam);
         ResultSet rs = stmt.executeQuery();
 
         List<RestaurantData> rslt = new ArrayList<>();
