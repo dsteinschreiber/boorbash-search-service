@@ -18,6 +18,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 
 
 @RestController
@@ -46,7 +47,7 @@ public class SearchService {
     public List<RestaurantData> restaurantSearch(@RequestParam("searchString") String searchString) throws SQLException {
         LOGGER.debug("Entering restaurant search " + searchString);
         Connection con = this.dataSource.getConnection();
-        String searchParam = "%" + searchString + "%";
+        String searchParam = "%" + searchString.toLowerCase() + "%";
         PreparedStatement stmt = con.prepareStatement(
                 "select name, description, pic_url, rating from restaurant_info" +
                         " where lower(name) like ?");
