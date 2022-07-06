@@ -49,7 +49,7 @@ public class SearchService {
         Connection con = this.dataSource.getConnection();
         String searchParam = "%" + searchString.toLowerCase() + "%";
         PreparedStatement stmt = con.prepareStatement(
-                "select name, description, pic_url, rating from restaurant_info" +
+                "select name, description, pic_url, rating, restaurant_id from restaurant_info" +
                         " where lower(name) like ?");
         stmt.setString(1, searchParam);
         ResultSet rs = stmt.executeQuery();
@@ -61,8 +61,9 @@ public class SearchService {
             String desc = rs.getString(2);
             String pic = rs.getString(3);
             BigDecimal rating = rs.getBigDecimal(4);
+            int restaurantId = rs.getInt(5);
 
-            rslt.add(RestaurantData.of(pic, name, desc, rating));
+            rslt.add(RestaurantData.of(restaurantId, pic, name, desc, rating));
         }
 
         rs.close();
