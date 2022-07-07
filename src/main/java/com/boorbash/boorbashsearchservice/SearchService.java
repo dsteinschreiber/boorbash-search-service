@@ -1,6 +1,6 @@
 package com.boorbash.boorbashsearchservice;
 
-import com.boorbash.boorbashsearchservice.interfaces.RestaurantData;
+import com.boorbash.interfaces.RestaurantData;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
