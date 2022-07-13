@@ -50,11 +50,23 @@ values ((select restaurant_id from restaurant_info where name = 'Little Italy'),
         10.99,
         'https://images.unsplash.com/photo-1546554137-f86b9593a222?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHw2OHx8Zm9vZHxlbnwxfHx8fDE2NTQ3MzIyNjA&ixlib=rb-1.2.1&q=80&w=200'),
        ((select restaurant_id from restaurant_info where name = 'Little Italy'),
+        'Appetizers',
+        'Caprese',
+        'Sliced fresh mozzarella, tomatoes, and sweet basil, seasoned with salt, and olive oil',
+        9.99,
+        'https://images.unsplash.com/photo-1529312266912-b33cfce2eefd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwzfHxjYXByZXNlfGVufDF8fHx8MTY1NzY3OTIyNA&ixlib=rb-1.2.1&q=80&w=200'),
+       ((select restaurant_id from restaurant_info where name = 'Little Italy'),
         'Main Dishes',
         'Spaghetti Bolognese',
         'Spaghetti with red meat sauce.',
         15.99,
         'https://images.unsplash.com/photo-1546554137-f86b9593a222?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHw2OHx8Zm9vZHxlbnwxfHx8fDE2NTQ3MzIyNjA&ixlib=rb-1.2.1&q=80&w=200'),
+       ((select restaurant_id from restaurant_info where name = 'Little Italy'),
+        'Main Dishes',
+        'Lasagna',
+        'Choice between veggie or meat.',
+        14.99,
+        'https://images.unsplash.com/photo-1574894709920-11b28e7367e3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwxfHxsYXNhZ25hfGVufDF8fHx8MTY1NzY3OTg0OQ&ixlib=rb-1.2.1&q=80&w=200'),
        ((select restaurant_id from restaurant_info where name = 'Danny''s Burgers'),
         'Burgers',
         'Mushroom Burger Deluxe',
@@ -64,7 +76,6 @@ values ((select restaurant_id from restaurant_info where name = 'Little Italy'),
 commit;
 
 select *
-from menu_entry;`
-
+from menu_entry;
 
 

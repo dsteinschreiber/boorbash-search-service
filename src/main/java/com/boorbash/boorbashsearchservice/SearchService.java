@@ -28,7 +28,7 @@ public class SearchService {
     @Autowired
     private DataSource dataSource;
 
-    private static final List<RestaurantData> SAMPLE_RESULTS = Arrays.asList(
+//    private static final List<RestaurantData> SAMPLE_RESULTS = Arrays.asList(
 //            RestaurantData.of(
 //                    "https://images.unsplash.com/photo-1572695157366-5e585ab2b69f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwyMDUzMDJ8MHwxfHNlYXJjaHwzfHxicnVzY2hldHRhfGVufDF8fHx8MTY1NDg5OTI2MA&ixlib=rb-1.2.1&q=80&w=200",
 //                    "Little Italy",
@@ -41,7 +41,7 @@ public class SearchService {
 //                    "Best burgers in town!",
 //                    new BigDecimal("5.0")
 //            )
-    );
+//    );
 
     @GetMapping("restaurantSearch")
     public List<RestaurantData> restaurantSearch(@RequestParam("searchString") String searchString) throws SQLException {
